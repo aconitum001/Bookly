@@ -11,8 +11,26 @@ class HomeViewBody extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         CustomAppBar(),
-        CustomListViewItem(),
+        FeaturedBookListView(),
       ],
+    );
+  }
+}
+
+class FeaturedBookListView extends StatelessWidget {
+  const FeaturedBookListView({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      height: MediaQuery.of(context).size.height * .26,
+      child: ListView.builder(
+        itemBuilder: (context, index) => const Padding(
+          padding: EdgeInsets.symmetric(horizontal: 8),
+          child: CustomListViewItem(),
+        ),
+        scrollDirection: Axis.horizontal,
+      ),
     );
   }
 }
