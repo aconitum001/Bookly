@@ -12,9 +12,10 @@ class BookRating extends StatelessWidget {
         const Icon(
           Icons.star_rate_rounded,
           color: Colors.yellow,
+          size: 22,
         ),
         const Text(
-          "4.8",
+          " 4.8",
           style: Styles.textStyle16,
         ),
         Text(
