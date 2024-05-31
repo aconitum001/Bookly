@@ -40,7 +40,10 @@ class CustomPlayButton extends StatelessWidget {
                   ),
                 ),
                 const Center(
-                  child: Icon(Icons.play_arrow),
+                  child: Icon(
+                    Icons.play_arrow,
+                    size: 17,
+                  ),
                 )
               ],
             ),
