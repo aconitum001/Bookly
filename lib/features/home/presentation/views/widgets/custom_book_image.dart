@@ -1,25 +1,24 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 class CustomBookImage extends StatelessWidget {
-  const CustomBookImage({super.key, this.child, required this.image});
+  const CustomBookImage({super.key, required this.image});
 
-  final Widget? child;
-  final String? image;
+  final String image;
 
   @override
   Widget build(BuildContext context) {
-    return AspectRatio(
-      aspectRatio: 1 / 1.7,
-      child: Container(
-        padding: const EdgeInsets.all(10),
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(16),
-          image: DecorationImage(
-            image: NetworkImage(image!),
-            fit: BoxFit.cover,
+    return ClipRRect(
+      borderRadius: BorderRadius.circular(16),
+      child: AspectRatio(
+        aspectRatio: 1 / 1.7,
+        child: CachedNetworkImage(
+          imageUrl: image,
+          placeholder: (context, url) => Container(
+            color: Colors.grey,
           ),
+          fit: BoxFit.cover,
         ),
-        child: child,
       ),
     );
   }
