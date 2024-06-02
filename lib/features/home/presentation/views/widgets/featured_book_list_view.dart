@@ -1,5 +1,6 @@
 import 'package:bookly/core/widgets/custom_error_widget.dart';
 import 'package:bookly/core/widgets/custom_loading_widget.dart';
+import 'package:bookly/features/home/data/models/book_model/book_model.dart';
 import 'package:bookly/features/home/presentation/view_models/featured_books_cubit/featured_books_cubit.dart';
 import 'package:bookly/features/home/presentation/views/widgets/Custom_play_button.dart';
 import 'package:bookly/features/home/presentation/views/widgets/custom_book_image.dart';
@@ -14,17 +15,20 @@ class FeaturedBookListView extends StatelessWidget {
     return BlocBuilder<FeaturedBooksCubit, FeaturedBooksState>(
       builder: (context, state) {
         if (state is FeaturedBooksSuccess) {
+          List<BookModel> books = state.books;
           return SizedBox(
             height: MediaQuery.of(context).size.height * .26,
             child: ListView.builder(
-              itemBuilder: (context, index) => const Padding(
-                padding: EdgeInsets.only(right: 10),
+              physics: const BouncingScrollPhysics(),
+              itemBuilder: (context, index) => Padding(
+                padding: const EdgeInsets.only(right: 10),
                 child: CustomBookImage(
-                  child: CustomPlayButton(),
+                  image: books[index].volumeInfo.imageLinks.thumbnail,
+                  child: const CustomPlayButton(),
                 ),
               ),
               scrollDirection: Axis.horizontal,
-              itemCount: 10,
+              itemCount: books.length,
             ),
           );
         } else if (state is FeaturedBooksFailure) {
