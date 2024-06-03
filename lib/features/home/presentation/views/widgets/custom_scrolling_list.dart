@@ -1,5 +1,4 @@
 import 'package:bookly/core/widgets/custom_error_widget.dart';
-import 'package:bookly/core/widgets/custom_loading_widget.dart';
 import 'package:bookly/features/home/presentation/view_models/newest_books_cubit/newest_books_cubit.dart';
 import 'package:bookly/features/home/presentation/views/widgets/book_list_view_item.dart';
 import 'package:flutter/material.dart';
@@ -104,7 +103,7 @@ class CustomShimmerContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      margin: EdgeInsets.all(5),
+      margin: const EdgeInsets.all(5),
       height: 20,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(8),
