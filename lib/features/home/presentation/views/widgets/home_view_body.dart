@@ -37,7 +37,7 @@ class HomeViewBody extends StatelessWidget {
             ],
           ),
         ),
-        CustomScrollingList()
+        CustomScrollingList(),
       ],
     );
   }
