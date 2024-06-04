@@ -28,7 +28,7 @@ class ShimmerLoadingWidget extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 6),
       child: Shimmer.fromColors(
-        baseColor: Colors.grey.shade300,
+        baseColor: Colors.grey.shade400,
         highlightColor: Colors.grey.shade100,
         child: AspectRatio(
           aspectRatio: 1 / 1.7,
