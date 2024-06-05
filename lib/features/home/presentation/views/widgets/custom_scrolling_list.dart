@@ -53,7 +53,7 @@ class LoadingNewestBooksShimmer extends StatelessWidget {
               vertical: 8,
             ),
             child: Shimmer.fromColors(
-              baseColor: Colors.grey.shade300,
+              baseColor: Colors.grey.shade400,
               highlightColor: Colors.grey.shade100,
               child: SizedBox(
                 height: 150,
