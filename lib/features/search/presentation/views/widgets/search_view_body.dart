@@ -29,12 +29,12 @@ class SearchViewBody extends StatelessWidget {
               ],
             ),
           ),
-          // SliverList(
-          //   delegate: SliverChildBuilderDelegate(
-          //     (context, index) =>  BookListViewItem(),
-          //     childCount: 10,
-          //   ),
-          // ),
+          SliverList(
+            delegate: SliverChildBuilderDelegate(
+              (context, index) => BookListViewItem(),
+              childCount: 10,
+            ),
+          ),
         ],
       ),
     );
