@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 const kPrimaryColor = Color(0xff100B20);
 const kTransitionDuration = Duration(milliseconds: 500);
 const kGtSectraFine = "GT Sectra Fine";
-const kPadding = 30.0;
+double kPadding = 30.w;

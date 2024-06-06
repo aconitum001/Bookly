@@ -4,6 +4,7 @@ import 'package:bookly/features/home/presentation/views/widgets/book_rating.dart
 import 'package:bookly/features/home/presentation/views/widgets/books_action.dart';
 import 'package:bookly/features/home/presentation/views/widgets/custom_book_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class BookDetailsSection extends StatelessWidget {
   const BookDetailsSection({super.key, required this.book});
@@ -16,18 +17,19 @@ class BookDetailsSection extends StatelessWidget {
       children: [
         Padding(
           padding: EdgeInsets.symmetric(horizontal: width * 0.18),
-          child: CustomBookImage(image: book.volumeInfo.imageLinks.thumbnail!),
+          child: CustomBookImage(
+              image: book.volumeInfo.imageLinks?.thumbnail ?? ""),
         ),
-        const SizedBox(
-          height: 38,
+        SizedBox(
+          height: 38.h,
         ),
         Text(
           book.volumeInfo.title!,
           style: Styles.textStyle30,
           textAlign: TextAlign.center,
         ),
-        const SizedBox(
-          height: 4,
+        SizedBox(
+          height: 4.h,
         ),
         Text(
           book.volumeInfo.authors![0],
@@ -37,15 +39,15 @@ class BookDetailsSection extends StatelessWidget {
             fontStyle: FontStyle.italic,
           ),
         ),
-        const SizedBox(
-          height: 5,
+        SizedBox(
+          height: 5.h,
         ),
         BookRating(
           rating: '4.5',
           count: book.volumeInfo.pageCount!,
         ),
-        const SizedBox(
-          height: 37,
+        SizedBox(
+          height: 37.h,
         ),
         BooksAction(
           book: book,

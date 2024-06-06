@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomPlayButton extends StatelessWidget {
   const CustomPlayButton({
@@ -39,10 +40,10 @@ class CustomPlayButton extends StatelessWidget {
                     ),
                   ),
                 ),
-                const Center(
+                Center(
                   child: Icon(
                     Icons.play_arrow,
-                    size: 17,
+                    size: 17.w,
                   ),
                 )
               ],

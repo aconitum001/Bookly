@@ -1,5 +1,6 @@
 import 'package:bookly/core/utils/styles.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class BookRating extends StatelessWidget {
   const BookRating({
@@ -16,10 +17,10 @@ class BookRating extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        const Icon(
+        Icon(
           Icons.star_rate_rounded,
           color: Colors.yellow,
-          size: 22,
+          size: 22.w,
         ),
         Text(
           rating.toLowerCase().replaceAll("_", " "),

@@ -17,6 +17,10 @@ class SearchRepoImpl implements SearchRepo {
       var data = await apiService.get(endPoint: "volumes?q=intitle:$bookName");
 
       final List<BookModel> books = [];
+
+      if (data["totalItems"] == 0) {
+        return right(books);
+      }
       for (var item in data["items"]) {
         books.add(
           BookModel.fromJson(item),

@@ -4,6 +4,7 @@ import 'package:bookly/features/home/presentation/views/widgets/books_details_se
 import 'package:bookly/features/home/presentation/views/widgets/custom_book_details_app_bar.dart';
 import 'package:bookly/features/home/presentation/views/widgets/similar_books_section.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class BookDetailsViewBody extends StatelessWidget {
   const BookDetailsViewBody({super.key, required this.book});
@@ -16,33 +17,32 @@ class BookDetailsViewBody extends StatelessWidget {
       slivers: [
         SliverToBoxAdapter(
           child: Padding(
-            padding:
-                const EdgeInsets.symmetric(horizontal: kPadding, vertical: 20),
+            padding: EdgeInsets.symmetric(horizontal: kPadding, vertical: 20.h),
             child: Column(
               children: [
                 const CustomBookDetailsAppBar(),
-                const SizedBox(
-                  height: 12,
+                SizedBox(
+                  height: 12.h,
                 ),
                 BookDetailsSection(
                   book: book,
                 ),
-                const SizedBox(
-                  height: 50,
+                SizedBox(
+                  height: 50.h,
                 ),
               ],
             ),
           ),
         ),
-        const SliverToBoxAdapter(
+        SliverToBoxAdapter(
           child: Padding(
             padding: EdgeInsets.symmetric(horizontal: kPadding),
-            child: SimilarBooksSection(),
+            child: const SimilarBooksSection(),
           ),
         ),
-        const SliverToBoxAdapter(
+        SliverToBoxAdapter(
           child: SizedBox(
-            height: 30,
+            height: 30.h,
           ),
         )
       ],

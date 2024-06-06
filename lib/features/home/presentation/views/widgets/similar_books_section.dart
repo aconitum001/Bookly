@@ -1,6 +1,7 @@
 import 'package:bookly/core/utils/styles.dart';
 import 'package:bookly/features/home/presentation/views/widgets/similar_books_list_view.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class SimilarBooksSection extends StatelessWidget {
   const SimilarBooksSection({super.key});
@@ -14,8 +15,8 @@ class SimilarBooksSection extends StatelessWidget {
           "You can also like",
           style: Styles.textStyle16.copyWith(fontWeight: FontWeight.w600),
         ),
-        const SizedBox(
-          height: 10,
+        SizedBox(
+          height: 10.h,
         ),
         const SimilarBooksListView()
       ],

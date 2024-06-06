@@ -10,6 +10,7 @@ class SearchBooksCubit extends Cubit<SearchBooksState> {
   final SearchRepoImpl searchRepoImpl;
 
   Future<void> searchBooks({required String bookName}) async {
+    emit(SearchBooksLoading());
     var result = await searchRepoImpl.fetchSearchedBooks(bookName: bookName);
 
     result.fold(
