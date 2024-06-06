@@ -36,7 +36,7 @@ class SearchResults extends StatelessWidget {
                   book: state.books[index],
                 ),
               ),
-              childCount: 10,
+              childCount: state.books.length,
             ),
           );
         } else if (state is SearchBooksFailure) {

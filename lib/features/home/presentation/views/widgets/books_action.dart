@@ -12,28 +12,28 @@ class BooksAction extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 8),
+      padding: EdgeInsets.symmetric(horizontal: 8.w),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          const Expanded(
+          Expanded(
             child: CustomButton(
               text: "Free",
               txtColor: Colors.black,
-              tL: 16,
-              bL: 16,
+              tL: 16.r,
+              bL: 16.r,
               bgColor: Colors.white,
             ),
           ),
           Expanded(
             child: CustomButton(
               onPressed: () async {
-                launchCustomUrl(context, book.volumeInfo.previewLink!);
+                launchCustomUrl(context, book.volumeInfo?.previewLink ?? "");
               },
               text: getText(book),
               txtColor: Colors.white,
-              tR: 16,
-              bR: 16,
+              tR: 16.r,
+              bR: 16.r,
               bgColor: const Color(0xffEF8262),
               fontsize: 16.sp,
             ),
@@ -44,7 +44,7 @@ class BooksAction extends StatelessWidget {
   }
 
   String getText(BookModel book) {
-    if (book.volumeInfo.previewLink == null) {
+    if (book.volumeInfo?.previewLink == null) {
       return 'Not avaliable';
     } else {
       return "preview";

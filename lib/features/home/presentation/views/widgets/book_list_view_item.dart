@@ -22,7 +22,8 @@ class BookListViewItem extends StatelessWidget {
         height: 150.h,
         child: Row(
           children: [
-            CustomBookImage(image: book.volumeInfo.imageLinks?.thumbnail ?? ""),
+            CustomBookImage(
+                image: book.volumeInfo?.imageLinks?.thumbnail ?? ""),
             Expanded(
               child: Padding(
                 padding: const EdgeInsets.only(left: 30),
@@ -31,7 +32,7 @@ class BookListViewItem extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      book.volumeInfo.title!,
+                      book.volumeInfo?.title ?? "",
                       style: Styles.textStyle20.copyWith(
                         fontFamily: kGtSectraFine,
                       ),
@@ -39,7 +40,7 @@ class BookListViewItem extends StatelessWidget {
                       overflow: TextOverflow.ellipsis,
                     ),
                     Text(
-                      book.volumeInfo.authors?[0] ?? "Uknown Author",
+                      book.volumeInfo?.authors?[0] ?? "Uknown Author",
                       style: Styles.textStyle14.copyWith(
                         color: Colors.white.withOpacity(0.7),
                       ),
@@ -54,8 +55,8 @@ class BookListViewItem extends StatelessWidget {
                           ),
                         ),
                         BookRating(
-                          rating: book.volumeInfo.maturityRating ?? "0",
-                          count: book.volumeInfo.pageCount ?? 0,
+                          rating: book.volumeInfo?.maturityRating ?? "0",
+                          count: book.volumeInfo?.pageCount ?? 0,
                         ),
                       ],
                     )

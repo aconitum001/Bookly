@@ -20,7 +20,7 @@ class SimilarBooksListView extends StatelessWidget {
                 padding: EdgeInsets.only(right: 10.w),
                 child: CustomBookImage(
                     image:
-                        state.books[index].volumeInfo.imageLinks?.thumbnail ??
+                        state.books[index].volumeInfo?.imageLinks?.thumbnail ??
                             ""),
               ),
               scrollDirection: Axis.horizontal,

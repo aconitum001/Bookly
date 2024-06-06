@@ -30,7 +30,7 @@ class FeaturedBookListView extends StatelessWidget {
                         .push(AppRouter.kBookDetailsView, extra: books[index]);
                   },
                   child: CustomBookImage(
-                    image: books[index].volumeInfo.imageLinks?.thumbnail ?? "",
+                    image: books[index].volumeInfo?.imageLinks?.thumbnail ?? "",
                   ),
                 ),
               ),
